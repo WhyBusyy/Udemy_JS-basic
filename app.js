@@ -19,9 +19,17 @@ function calculateAdultYears(userAge) {
 // } === 위 함수와 동일한 값을 반환
 
 adultYears=calculateAdultYears(age);
-alert(adultYears);
+console.log(adultYears);
 
 age = 45;
 adultYears=calculateAdultYears(age);
-alert(adultYears);
+console.log(adultYears);
 
+let person = {
+  name: 'Max',
+  greet() {
+    console.log('Hello!');
+  }
+}
+
+person.greet();
