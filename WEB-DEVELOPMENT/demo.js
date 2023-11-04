@@ -1,6 +1,6 @@
 const productNameInputElement = document.getElementById('productName');
 // 1. input을 변수로 설정
-const remainingCharsElement = document.getElementById('remainingChars');
+const remainingCharsElement = document.getElementById('remaining-chars');
 // 2. 수정되어야할 값을 랩핑하고 있는 span 변수 설정
 
 const maxAllowedChars = productNameInputElement.maxLength;
@@ -16,6 +16,18 @@ function updateRemainingCharacters(event) {
     // 7-2. 최대 길이 - 발생한 이벤트의 값 길이를 변수로 설정
     remainingCharsElement.textContent = remainingCharaters;
     // 8. 수정되어야할 값을 랩핑하고 있는 span.텍스트를 7번에서 만든 변수로 설정
+    if(remainingCharaters === 0) {
+        remainingCharsElement.classList.add('error');
+        productNameInputElement.classList.add('error');
+    } else if(remainingCharaters <= 10) {
+        remainingCharsElement.classList.add('warning');
+        productNameInputElement.classList.add('warning');
+        remainingCharsElement.classList.remove('error');
+        productNameInputElement.classList.remove('error');
+    } else {
+        remainingCharsElement.classList.remove('error', 'warning');
+        productNameInputElement.classList.remove('error', 'warning');
+    }
 }
 
 productNameInputElement.addEventListener('input', updateRemainingCharacters);
