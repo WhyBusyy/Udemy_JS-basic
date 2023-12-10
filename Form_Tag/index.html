@@ -6,11 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Forms</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Electrolize&family=Roboto:wght@400;700&family=Silkscreen&family=Wallpoet&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <form action="/" method="GET">
-        <input type="text" name="user-name">
+        <label for="user-name">Your name</label>
+        <!-- label의 for 속석은 id값을 필요로 함, 웹사이트에서 label 클릭 시에 해당하는 input이 선택됨 -->
+        <input type="text" name="user-name" id="user-name">
         <button>Submit</button>
     </form>
 </body>
