@@ -15,9 +15,17 @@
 
 <body>
     <form action="/" method="GET">
-        <label for="user-name">Your name</label>
+        <label for="username">Your name</label>
         <!-- label의 for 속석은 id값을 필요로 함, 웹사이트에서 label 클릭 시에 해당하는 input이 선택됨 -->
-        <input type="text" name="user-name" id="user-name">
+        <input type="text" name="user-name" id="username">
+        <label for="useremail">Your email address</label>
+        <input type="email" name="user-mail" id="usermail">
+        <label for="userage">Your age</label>
+        <input type="number" step="1" name="user-age" id="userage">
+        <label for="userpassword">Your password</label>
+        <input type="password" name="user-password" id="userpassword">
+        <label for="birthdate">Your birthdate</label>
+        <input type="date" name="user-birthdate" id="birthdate">
         <button>Submit</button>
     </form>
 </body>
