@@ -19,21 +19,24 @@
     </header>
     <main>
         <form action="/" method="GET">
+            <!-- 직접 유효성 검증하는 코드를 사용하려면 브라우저의 기본 검증 속성을 제거하는 novalidate 속성을 쓰면 됨 -->
             <section>
                 <h2>Your personal details</h2>
                 <ul>
                     <li>
                         <label for="username">Your name</label>
                         <!-- label의 for 속석은 id값을 필요로 함, 웹사이트에서 label 클릭 시에 해당하는 input이 선택됨 -->
-                        <input type="text" name="user-name" id="username">
+                        <input type="text" name="user-name" id="username" required>
+                        <!-- require로 필수 입력을 받을 수 있음 -->
                     </li>
                     <li>
                         <label for="useremail">Your email address</label>
-                        <input type="email" name="user-mail" id="usermail">
+                        <input type="email" name="user-mail" id="usermail" required>
                     </li>
                     <li>
                         <label for="userpassword">Your password</label>
-                        <input type="password" name="user-password" id="userpassword">
+                        <input type="password" name="user-password" id="userpassword" minlength="7">
+                        <!-- minlength 속성으로 최소 길이를 정할 수 있다 -->
                     </li>
                 </ul>
             </section>
@@ -43,11 +46,13 @@
                 <ul>
                     <li>
                         <label for="userage">Your age</label>
-                        <input type="number" step="1" name="user-age" id="userage">
+                        <input type="number" step="1" name="user-age" id="userage" required min="18" max="100">
+                        <!-- min, max 속성으로 최솟값, 최댓값을 제한할 수 있음 -->
                     </li>
                     <li>
                         <label for="birthdate">Your birthdate</label>
-                        <input type="date" name="user-birthdate" id="birthdate">
+                        <input type="date" name="user-birthdate" id="birthdate" required min="1921-01-01" max="2003-01-01">
+                        <!-- min, max 속성으로 날짜 역시 최솟값, 최댓값을 제한할 수 있음 -->
                     </li>
                     <li>
                         <label for="favorite-color">Your favorite color?</label>
@@ -69,15 +74,15 @@
                 <h2>How should we verify your account?</h2>
                 <ul>
                     <li class="form-control-inline">
-                        <input type="radio" name="verify" id="verify-text-message" value="text-message">
+                        <input type="radio" name="verify" id="verify-text-message" value="text-message" required>
                         <label for="verify-text-message">Via text message</label>
                     </li>
                     <li class="form-control-inline">
-                        <input type="radio" name="verify" id="verify-phone" value="phone">
+                        <input type="radio" name="verify" id="verify-phone" value="phone" required>
                         <label for="verify-phone">Via a phone call</label>
                     </li>
                     <li class="form-control-inline">
-                        <input type="radio" name="verify" id="verify-email" value="email">
+                        <input type="radio" name="verify" id="verify-email" value="email" required>
                         <label for="verify-email">Via an email</label>
                     </li>
                 </ul>
